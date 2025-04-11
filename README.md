@@ -6,6 +6,8 @@ Build your own calendars with SwiftUI.
 [![Platform](https://img.shields.io/badge/Platform-iOS%20|%20macOS%20|%20tvOS%20|%20watchOS%20|%20visionOS-lightgrey.svg)](https://developer.apple.com)
 [![License](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
 
+![image](https://github.com/user-attachments/assets/4da93214-755f-4414-9d39-e0db6df15e4b)
+
 ## Requirements 🔧
 
 All versions listed are minimum required (or later versions).
