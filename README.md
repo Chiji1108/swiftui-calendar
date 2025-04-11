@@ -50,7 +50,7 @@ dependencies: [
 ### ScrollableCalendarList
 
 <details>
-<summary>To display a scrollable calendar list (click to expand):</summary>
+<summary>code</summary>
 
 ```swift
 import SwiftUI
@@ -145,7 +145,7 @@ struct ScrollableCalendar: View {
 ### PagedCalendarList
 
 <details>
-<summary>To display a paged calendar (click to expand):</summary>
+<summary>code</summary>
 
 ```swift
 import SwiftUI
