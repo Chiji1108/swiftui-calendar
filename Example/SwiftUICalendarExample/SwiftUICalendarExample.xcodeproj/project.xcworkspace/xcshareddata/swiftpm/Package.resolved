@@ -1,0 +1,15 @@
+{
+  "originHash" : "10059e280222e3a3e0f0c80c305203eb6695681fc860c22945505afdcd2825b1",
+  "pins" : [
+    {
+      "identity" : "swiftui-calendar",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/Chiji1108/swiftui-calendar.git",
+      "state" : {
+        "branch" : "main",
+        "revision" : "d99d7cd753d48aeb8ba00a1061569d1cb7a06abe"
+      }
+    }
+  ],
+  "version" : 3
+}

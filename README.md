@@ -1,4 +1,4 @@
-# SwiftUICalendar 📆
+# swiftui-calendar 📆
 
 SwiftUICalendar is a beautiful and high-performance calendar component library built with SwiftUI. It supports all platforms including iOS, macOS, tvOS, watchOS, and visionOS.
 
