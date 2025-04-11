@@ -3,19 +3,23 @@
 Build your own calendars with SwiftUI.
 
 [![Swift Version](https://img.shields.io/badge/Swift-6.1-orange.svg)](https://swift.org)
-[![License](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
 [![Platform](https://img.shields.io/badge/Platform-iOS%20|%20macOS%20|%20tvOS%20|%20watchOS%20|%20visionOS-lightgrey.svg)](https://developer.apple.com)
+[![License](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
 
 ![Calendar Preview](https://via.placeholder.com/800x400?text=SwiftUICalendar)
 
 ## Requirements 🔧
 
-- Swift 6.1 or later
-- iOS 17.0 or later
-- macOS 14.0 or later
-- tvOS 17.0 or later
-- watchOS 10.0 or later
-- visionOS 1.0 or later
+All versions listed are minimum required (or later versions).
+
+| Platform | Version |
+| -------- | ------- |
+| Swift    | 6.1     |
+| iOS      | 17.0    |
+| macOS    | 14.0    |
+| tvOS     | 17.0    |
+| watchOS  | 10.0    |
+| visionOS | 1.0     |
 
 ## Features ✨
 
