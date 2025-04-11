@@ -6,8 +6,6 @@ Build your own calendars with SwiftUI.
 [![Platform](https://img.shields.io/badge/Platform-iOS%20|%20macOS%20|%20tvOS%20|%20watchOS%20|%20visionOS-lightgrey.svg)](https://developer.apple.com)
 [![License](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
 
-![Calendar Preview](https://via.placeholder.com/800x400?text=SwiftUICalendar)
-
 ## Requirements 🔧
 
 All versions listed are minimum required (or later versions).
@@ -45,9 +43,12 @@ dependencies: [
 ]
 ```
 
-## Usage 📝
+## Example 📝
 
-### ScrollableCalendarList
+### ScrollableCalendar
+
+![Simulator Screen Recording - iPhone 16 Pro - 2025-04-11 at 14 59 30](https://github.com/user-attachments/assets/7e6f6272-57be-46d9-a867-348374704067)
+
 
 <details>
 <summary>code</summary>
@@ -142,7 +143,9 @@ struct ScrollableCalendar: View {
 
 </details>
 
-### PagedCalendarList
+### PagedCalendar
+
+![Simulator Screen Recording - iPhone 16 Pro - 2025-04-11 at 14 56 57](https://github.com/user-attachments/assets/671b7f39-63b4-4491-a5ad-ddc6738c5d81)
 
 <details>
 <summary>code</summary>
