@@ -49,6 +49,6 @@ struct PagedCalendar: View {
 }
 
 #Preview {
-    @Previewable @State var selectedMonth = Date.now
-    PagedCalendar(selectedYearMonth: $selectedMonth)
+    @Previewable @State var selectedYearMonth = Date.now
+    PagedCalendar(selectedYearMonth: $selectedYearMonth)
 }

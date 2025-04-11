@@ -37,23 +37,90 @@ dependencies: [
 To display a scrollable calendar list:
 
 ```swift
-@State var selectedYearMonth: Date = Date.now
+import SwiftUI
+import SwiftUICalendar
 
-ScrollableCalendarList(selectedYearMonth: $selectedYearMonth) { yearMonth in
-    VStack {
-        // Month header
-        Text(yearMonth.formatted(.dateTime.year().month()))
-            .font(.headline)
+struct ScrollableCalendar: View {
+    @Binding var selectedYearMonth: Date
 
-        // Calendar content
-        WeekList(yearMonth: yearMonth) { date in
-            Text(date.day, format: .number)
-                .frame(width: 32, height: 32)
-                .foregroundStyle(date.isToday ? .white : .primary)
-                .background(date.isToday ? Color.blue : Color.clear)
-                .clipShape(Circle())
+    var body: some View {
+        NavigationStack {
+            VStack(spacing: 0) {
+                // MARK: Weekday Symbols
+                WeekRow { date in
+                    Text(date.weekdaySymbol(.veryShort))
+                        .font(.system(size: 12, weight: .light))
+                        .foregroundStyle(date.isWeekend ? .secondary : .primary)
+                }
+                .background(.gray.opacity(0.1))
+
+                Divider()
+
+                ScrollableCalendarList(selectedYearMonth: $selectedYearMonth) { yearMonth in
+                    VStack(spacing: 4) {
+                        // MARK: YearMonth Symbol
+                        WeekRow { date in
+                            if date.weekday == yearMonth.startOfMonth.weekday {
+                                VStack {
+                                    Text(yearMonth.formatted(.dateTime.year()))
+                                        .font(.system(size: 12, weight: .bold))
+                                    Text(yearMonth.formatted(.dateTime.month()))
+                                        .font(.system(size: 24, weight: .bold))
+                                }
+                                .foregroundStyle(
+                                    yearMonth.isInSameYearMonth(Date.now) ? .accentColor : Color.primary
+                                )
+                            } else {
+                                Spacer()
+                            }
+                        }
+
+                        // MARK: Calendar Body
+                        WeekList(yearMonth: yearMonth) { date in
+                            VStack {
+                                Divider()
+
+                                ZStack {
+                                    if date.isToday {
+                                        Circle()
+                                            .frame(width: 24, height: 24)
+                                            .foregroundStyle(.tint)
+                                    }
+
+                                    Text(date.day, format: .number)
+                                        .font(.system(size: 12, weight: date.isToday ? .bold : .light))
+                                        .frame(width: 24, height: 24)
+                                        .foregroundStyle(
+                                            date.isToday
+                                                ? .white : date.isWeekend ? .secondary : .primary
+                                        )
+
+                                }
+                                .frame(maxHeight: .infinity, alignment: .top)
+                            }
+                            .frame(height: 96)
+                            .opacity(date.isInSameYearMonth(yearMonth) ? 1 : 0)
+                        }
+                    }
+                }
+            }
+            .navigationTitle(selectedYearMonth.monthSymbol(.full))
+            .toolbar {
+                if !selectedYearMonth.isInSameYearMonth(Date.now) {
+                    Button("Today") {
+                        withAnimation {
+                            selectedYearMonth = Date.now
+                        }
+                    }
+                }
+            }
         }
     }
+}
+
+#Preview {
+    @Previewable @State var selectedYearMonth = Date.now
+    ScrollableCalendar(selectedYearMonth: $selectedYearMonth)
 }
 ```
 
@@ -62,20 +129,59 @@ ScrollableCalendarList(selectedYearMonth: $selectedYearMonth) { yearMonth in
 To display a paged calendar:
 
 ```swift
-@State var selectedYearMonth: Date = Date.now
+import SwiftUI
+import SwiftUICalendar
 
-PagedCalendarList(selectedYearMonth: $selectedYearMonth) { yearMonth in
-    VStack {
-        // Month header
-        Text(yearMonth.formatted(.dateTime.year().month()))
-            .font(.headline)
+struct PagedCalendar: View {
+    @Binding var selectedYearMonth: Date
 
-        // Calendar content
-        WeekList(yearMonth: yearMonth) { date in
-            Text(date.day, format: .number)
-                .frame(width: 32, height: 32)
+    var body: some View {
+        NavigationStack {
+            PagedCalendarList(selectedYearMonth: $selectedYearMonth) { yearMonth in
+                VStack(spacing: 0) {
+                    // MARK: Weekday Symbols
+                    WeekRow { date in
+                        Text(date.weekdaySymbol(.veryShort))
+                            .font(.system(size: 12, weight: .light))
+                    }
+
+                    // MARK: Calendar Body
+                    WeekList(yearMonth: yearMonth) { date in
+                        ZStack {
+                            if date.isToday {
+                                RoundedRectangle(cornerRadius: 8)
+                                    .fill(.gray.opacity(0.2))
+                            }
+
+                            Text(date.day, format: .number)
+                                .padding(4)
+                                .font(.system(size: 12, weight: .light))
+                                .frame(maxHeight: .infinity, alignment: .top)
+                        }
+                        .frame(height: 80)
+                        .opacity(date.isInSameYearMonth(yearMonth) ? 1 : 0.4)
+                    }
+                }
+                .frame(maxHeight: .infinity, alignment: .top)
+                .padding(.horizontal, 8)
+            }
+            .navigationTitle(selectedYearMonth.monthSymbol(.full))
+            .toolbar {
+                if !selectedYearMonth.isInSameYearMonth(Date.now) {
+                    Button("Today") {
+                        withAnimation {
+                            selectedYearMonth = Date.now
+                        }
+                    }
+                }
+            }
         }
     }
+}
+
+#Preview {
+    @Previewable @State var selectedYearMonth = Date.now
+    PagedCalendar(selectedYearMonth: $selectedYearMonth)
 }
 ```
 

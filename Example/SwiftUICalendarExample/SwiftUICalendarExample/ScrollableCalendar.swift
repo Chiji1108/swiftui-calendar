@@ -80,6 +80,6 @@ struct ScrollableCalendar: View {
 }
 
 #Preview {
-    @Previewable @State var selectedMonth = Date.now
-    ScrollableCalendar(selectedYearMonth: $selectedMonth)
+    @Previewable @State var selectedYearMonth = Date.now
+    ScrollableCalendar(selectedYearMonth: $selectedYearMonth)
 }
