@@ -1,6 +1,6 @@
 # swiftui-calendar 📆
 
-SwiftUICalendar is a beautiful and high-performance calendar component library built with SwiftUI. It supports all platforms including iOS, macOS, tvOS, watchOS, and visionOS.
+Build your own calendars with SwiftUI.
 
 [![Swift Version](https://img.shields.io/badge/Swift-6.1-orange.svg)](https://swift.org)
 [![License](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
@@ -8,15 +8,26 @@ SwiftUICalendar is a beautiful and high-performance calendar component library b
 
 ![Calendar Preview](https://via.placeholder.com/800x400?text=SwiftUICalendar)
 
+## Requirements 🔧
+
+- Swift 6.1 or later
+- iOS 17.0 or later
+- macOS 14.0 or later
+- tvOS 17.0 or later
+- watchOS 10.0 or later
+- visionOS 1.0 or later
+
 ## Features ✨
 
-- 🔄 Scrollable calendar view
-- 📱 Paged calendar view
-- 🎨 Highly customizable design
-- 📊 Week and month view support
-- 🔍 Easy date selection and manipulation
-- 📈 Performance-optimized layout
+- 🔄 Infinite scrolling support
+- 🎨 Truly unlimited customization possibilities
+- 📱 Support for both Vertical (pagination) and Horizontal (scrollable) layouts
+- 🌍 Compatible with user-defined calendars beyond the Gregorian calendar
+- 🗣️ Multi-language support based on user preferences
+- 📅 Customizable week start day
 - 🌓 Dark mode support
+- 📊 Both Month View and Week View support
+- 📈 High-performance design using modern APIs
 
 ## Installation 💻
 
@@ -34,7 +45,8 @@ dependencies: [
 
 ### ScrollableCalendarList
 
-To display a scrollable calendar list:
+<details>
+<summary>To display a scrollable calendar list (click to expand):</summary>
 
 ```swift
 import SwiftUI
@@ -124,9 +136,12 @@ struct ScrollableCalendar: View {
 }
 ```
 
+</details>
+
 ### PagedCalendarList
 
-To display a paged calendar:
+<details>
+<summary>To display a paged calendar (click to expand):</summary>
 
 ```swift
 import SwiftUI
@@ -185,14 +200,7 @@ struct PagedCalendar: View {
 }
 ```
 
-## Requirements 🔧
-
-- Swift 6.1 or later
-- iOS 17.0 or later
-- macOS 14.0 or later
-- tvOS 17.0 or later
-- watchOS 10.0 or later
-- visionOS 1.0 or later
+</details>
 
 ## License 📄
 
